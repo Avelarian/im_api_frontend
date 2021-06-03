@@ -1,0 +1,161 @@
+.doctor-container {
+    width: 100%;
+    max-width: 1120px;
+    height: 100vh;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doctor-container .content {
+    width: 100%;
+    height: 90%;
+    padding: 96px;
+    background: #f0f0f5;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor-container .content section {
+    width: 100%;
+    max-width: 380px;
+}
+
+.doctor-container .content img {
+    width: 100%;
+    max-width: 300px;
+}
+
+.doctor-container .content section h1 {
+    margin: 40px 0 20px;
+    font-size: 32px;
+}
+
+.doctor-container .content section strong {
+    font-size: 24px;
+    font-weight: 550;
+}
+
+.doctor-container .content section p {
+    font-size: 18px;
+    color: #737380;
+    line-height: 32px;
+}
+
+.doctor-container .content section .contact-box {
+    width: 100%;
+    margin-top: 20px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor-container .content section .contact-box strong {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.doctor-container .content section .contact-box p {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.doctor-container .content section .schedule-table {
+    width: 100%;
+    padding: 96px;
+    background: #f0f0f5;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor-container .content section .schedule-table {
+    width: 100%;
+    padding: 10px;
+    background: #f0f0f5;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor-container .content section form {
+    width: 100%;
+    max-width: 450px;
+    margin: 40px 0 20px;
+}
+
+.doctor-container .content form input,
+.doctor-container .content form textarea {
+    margin-top: 8px;
+}
+
+.doctor-container .content section .schedule-table ul {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    list-style: none;
+    width: 100%;
+    height: 250px;
+    overflow: auto
+}
+
+.doctor-container .content section .schedule-table ul li {
+    background: #FFF;
+    padding: 12px;
+    border-radius: 8px;
+    position: relative;
+    width: 100%;
+    height: 125px;
+}
+
+.doctor-container .content section .schedule-table ul li button {
+    width: 100%;
+    max-width: 60px;
+    height: 60px;
+    background: #00BFFF;
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+    border: 0;
+    border-radius: 8px;
+    color: #FFF;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.doctor-container .content section .schedule-table ul li button:hover {
+    opacity: 0.8;
+    background: #00BFFF;
+}
+
+.doctor-container .content section .schedule-table ul li strong  {
+    display: block;
+    margin-bottom: 16px;
+    color: #41414d;
+}
+
+.doctor-container .content section .schedule-table ul li p + strong {
+    margin-top: 32px;
+}
+
+.doctor-container .content section .schedule-table ul li p {
+    color: #737380;
+    line-height: 21px;
+    font-size: 16px;
+}
