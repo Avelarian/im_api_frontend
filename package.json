@@ -1,17 +1,37 @@
 {
   "name": "desktop",
   "version": "0.1.0",
+  "description": "Simple electron app.",
+  "author": {
+    "name": "Ian Avelar",
+    "email": "avelarian@gmail.com"
+  },
+  "build": {
+    "appId": "com.im-api.desktop",
+    "productName": "Desktop",
+    "copyright": "Copyright © 2021 Ian Avelar",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
   "private": true,
   "homepage": "./",
-  "main": "./electron/main.js",
+  "main": "public/electron.js",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "axios": "^0.19.2",
-    "concurrently": "^6.2.0",
-    "electron": "^13.1.0",
-    "electron-builder": "^22.10.5",
+    "axios": "^0.21.1",
+    "concurrently": "5.2.0",
+    "electron-is-dev": "1.2.0",
+    "electron-squirrel-startup": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.9.0",
@@ -19,8 +39,18 @@
     "react-scripts": "3.4.1",
     "react-toastify": "^7.0.3",
     "react-toastr": "2.9.0",
-    "wait-on": "^5.0.0",
+    "wait-on": "5.1.0",
     "web-vitals": "^1.0.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.57",
+    "@electron-forge/maker-deb": "^6.0.0-beta.57",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.57",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.57",
+    "@electron-forge/maker-zip": "^6.0.0-beta.57",
+    "electron": "9.1.1",
+    "electron-devtools-installer": "^3.2.0",
+    "typescript": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -28,13 +58,43 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "ebuild": "npm run build && node_modules/.bin/build",
-    "dev": "concurrently \"npm start\" \"wait-on http://localhost:3000 && electron .\""
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dev": "concurrently -k \"BROWSER=none yarn start\" \"yarn:electron\""
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "desktop"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ],
+      "publishers": []
+    }
   },
   "browserslist": {
     "production": [

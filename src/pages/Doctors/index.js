@@ -54,7 +54,6 @@ export default function Doctors() {
             <button
               type="button"
               onClick={() => {
-                console.log(doctor.id);
                 history.push(`/doctors/${doctor.id}`);
               }}
             >
